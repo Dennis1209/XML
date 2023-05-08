@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 10px;
+    background-color: rgb(240, 240, 235);
+  }
+  pre b{
+      color:rgb(30, 155, 30);
+  }
+
+    /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .code_name{
+      background-color: rgb(218, 218, 218);
+      width: 96%;
+      float:left;
+      margin-left: 2%;
+  }
+  .code_demo {
+      background-color: rgb(233, 233, 233);
+      width: 92%;
+      float:left;
+      margin-left: 4%;
+      margin-bottom: 4%;
+      border-left:green 5px solid;
+      padding-left: 5px;
+      display: block;
+  }
+
+  .button_section{
+    padding:10px 0px;
+    margin: 10px 0px;
+    width: 75%;
+    float: left;
+  }
+
+  .button_page{
+        background: rgb(76, 129, 179);
+        height:40px;
+        width:80px;
+        color:white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+    .button_section {
+        width: 100%;
+    }
+  }
+/*
+  <!-- Title Heading -->
+    <div class="card">
+        <h2>Example</h2>
+        <div class="code_demo">
+            <pre><code>
+               "Your Code";
+            </code></pre>
+        </div>
+    </div>
+*/

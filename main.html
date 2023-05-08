@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Main</title>
+<style>
+    * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 10px;
+    background-color: rgb(240, 240, 235);
+  }
+  pre b{
+      color:rgb(30, 155, 30);
+  }
+
+    /* Create two unequal columns that floats next to each other */
+  /* Left column */ 
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .code_name{
+      background-color: rgb(218, 218, 218);
+      width: 96%;
+      float:left;
+      margin-left: 2%;
+  }
+  .code_demo {
+      background-color: rgb(233, 233, 233);
+      width: 92%;
+      float:left;
+      margin: 4%;
+      border-left:green 5px solid;
+      padding-left: 5px;
+      display: block;
+  }
+  .relative{
+    background-color: #aaa;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: large;
+    margin: 5px 0px;
+  }
+ 
+  .button_section{
+    padding:10px 0px;
+    margin: 10px 0px;
+    width: 75%;
+    float: left;
+  }
+
+  .button_page{
+        background: rgb(76, 129, 179);
+        height:40px;
+        width:80px;
+        color:white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    table, th, td 
+    {
+        border: 1px solid black;
+    }
+
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 750px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+    .button_section {
+        width: 100%;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="row">
+  <!-- Left -->
+  <div class="leftcolumn">
+    <script src="goto.js"></script>
+    <!-- Title Heading -->
+    <div class="card">
+      <h1>Add a book</h2>
+        
+      <label for="ID">Book ID:</label><br>
+      <input type="text" id="ID"></input><br>
+      <label for="title">Title:</label><br>
+      <input type="text" id="title"></input><br>
+      <label for="category">Category:</label><br>
+      <input type="text" id="category"></input><br>
+      <label for="auther">Auther:</label><br>
+      <input type="text" id="auther"></input><br>
+      <label for="price">Price:</label><br>
+      <input type="text" id="price"></input><br>
+
+      <button class="relative" onclick="Add()" style="width: 30%;">Add</button>
+      <button class="relative" onclick="clear_a()" style="width: 30%;">Clear</button>
+    </div>
+    <!-- Title Heading -->
+    <div class="card">
+      <h1>Delete a book</h2>
+        <label for="ID_del">Book ID:</label><br>
+        <input type="text" id="ID_del"></input><br>
+
+        <button class="relative" onclick="Delete()" style="width: 30%;">Delete</button>
+        <button class="relative" onclick="clear_d()" style="width: 30%;">Clear</button>
+    </div>
+    <!-- Title Heading -->
+    <div class="card">
+      <h1>Search a book</h2>
+
+      <label for="sID">Book ID:</label><br>
+      <input type="text" id="sID"></input>
+      <button class="relative" onclick="Search(1)" style="width: 30%; height: 30px;">Search</button>
+      <br>
+      <label for="stitle">Title:</label><br>
+      <input type="text" id="stitle"></input>
+      <button class="relative" onclick="Search(2)" style="width: 30%; height: 30px;">Search</button>
+      <br>
+      <label for="scategory">Category:</label><br>
+      <input type="text" id="scategory"></input>
+      <button class="relative" onclick="Search(3)" style="width: 30%; height: 30px;">Search</button>
+      <br>
+      <label for="sauther">Auther:</label><br>
+      <input type="text" id="sauther"></input>
+      <button class="relative" onclick="Search(4)" style="width: 30%; height: 30px;">Search</button>
+      <br>
+      <label for="sprice">Price:</label><br>
+      <input type="text" id="sprice"></input>
+      <button class="relative" onclick="Search(5)" style="width: 30%; height: 30px;">Search</button>
+      <br>
+      <table id="big_table" style="display: none;">
+        <tr>
+          <th>ID</th>
+          <th>Category</th>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Price</th>
+        </tr>
+        <tr id="table"> <!--<td></td>-->
+        </tr>
+      </table>
+      <button class="relative" onclick="clear_all()" style="width: 30%;">Clear</button>
+    </div>
+  </div>
+  <!-- Right -->
+  <div class="rightcolumn">
+    <div id = "in" class = "card" style="display: block;">
+      <script src="goto.js"></script>
+      <label for="user">User Name:</label><br>
+      <input type="text" id="user" style="width: 100%;"></input><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" style="width: 100%;"></input><br>
+      <button class="relative" onclick="LogIn()">Log In</button>
+      <button class="relative" onclick="SignIn()">Sign In</button>
+      <button class="relative" onclick="clear1()">Clear</button>
+    </div>
+
+    <div id="out" class="card" style="display: none;">
+      <script src="goto.js"></script>
+      <h2>Welcome</h2>
+      <p id="output"></p>
+      <button class="log" onclick="LogOut()">Log Out</button>
+    </div>
+
+    <div class="card">
+      <script src="goto.js"></script>
+      <h3>Relative post</h3>
+      <div style="padding: 5%;">
+        <button class="relative" onclick="alert('It\'s just a button')">Add book</button>
+        <button class="relative" onclick="alert('Of course it\'s also a button')">Delete book</button>
+        <button class="relative" onclick="alert('Wrong Pasword')">Search book</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Follow Me</h3>
+      <img src = "135.jpg" alt = "img" width = "100%" height="100%">
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<!-- end -->
+<div class = "button_section">
+    <button style="float: left; margin-left: 10%; " class="button_page" type="button"
+     onclick="alert('previous')">&lt Pre</button>
+    <button style="float: right; margin-right: 10%;" class="button_page" type="button"
+     onclick="alert('next')">Next &gt</button>
+</div>
+
+</body>
+</html>

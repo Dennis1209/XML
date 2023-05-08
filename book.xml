@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <book id="01" category="textbook">
+        <author>Larson</author>
+        <title>Essential Calculus</title>
+        <price>975</price>
+    </book>
+    <book id="02" category="textbook">
+        <author>Rubin</author>
+        <title>Essential Scrum</title>
+        <price>1025</price>
+    </book>
+    <book id="04" category="novel">
+        <author>Collins</author>
+        <title>Catching Fire</title>
+        <price>975</price>
+    </book>
+    <book id="05" category="novel">
+        <author>Paterson</author>
+        <title>Terabithia</title>
+        <price>975</price>
+    </book>
+    <book id="14" category="novel">
+        <title>addabook</title>
+        <author>me</author>
+        <price>1</price>
+    </book>
+</root>

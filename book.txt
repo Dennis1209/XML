@@ -1,0 +1,7 @@
+<root>
+    <book id="01" category="textbook">
+        <author>Larson</author>
+        <title>Essential Calculus</title>
+        <price>975</price>
+    </book>
+</root>
